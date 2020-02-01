@@ -6,14 +6,19 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c rollup.config.js",
+    "start": "concurrently -p \"[{name}]\" -n \"ROLLUP,SITE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn rollup -c rollup.config.js --watch\" \"yarn serve dist\"",
     "prepublish": "yarn build",
     "postinstall": "yarn build"
   },
-  "dependencies": {
+  "devDependencies": {
     "@rollup/plugin-typescript": "^3.0.0",
-    "mdx-deck": "^3.1.0",
+    "concurrently": "^5.1.0",
     "monaco-editor": "^0.19.3",
+    "serve": "^11.3.0",
     "rollup": "^1.31.0",
     "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "mdx-deck": "^3.1.0"
   }
 }

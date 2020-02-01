@@ -6,5 +6,5 @@ export default {
     dir: 'dist',
     format: 'amd'
   },
-  plugins: [typescript()]
+  plugins: [typescript({ tsconfig: "tsconfig.json"})]
 };
