@@ -1,0 +1,19 @@
+{
+  "name": "typescript-playground-presentation-mode",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "author": "Orta Therox",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "prepublish": "yarn build",
+    "postinstall": "yarn build"
+  },
+  "dependencies": {
+    "@rollup/plugin-typescript": "^3.0.0",
+    "mdx-deck": "^3.1.0",
+    "monaco-editor": "^0.19.3",
+    "rollup": "^1.31.0",
+    "typescript": "^3.7.5"
+  }
+}
