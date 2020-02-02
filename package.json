@@ -5,7 +5,7 @@
   "author": "Orta Therox",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.js;",
+    "build": "node scripts/getDTS.js; rollup -c rollup.config.js;",
     "start": "concurrently -p \"[{name}]\" -n \"ROLLUP,SITE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn rollup -c rollup.config.js --watch\" \"yarn serve dist\"",
     "prepublish": "yarn build",
     "postinstall": "yarn build"

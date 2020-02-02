@@ -2,7 +2,11 @@ import typescript from "@rollup/plugin-typescript";
 import node from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
-import {copyFileSync} from "fs"
+import {copyFileSync, existsSync, mkdirSync} from "fs"
+
+if (!existsSync('dist')) {
+  mkdirSync('dist')
+}
 
 copyFileSync("src/slideshow/slideshow.css", "dist/slideshow.css")
 
