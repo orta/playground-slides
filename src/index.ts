@@ -1,10 +1,6 @@
-declare const playground: ReturnType<typeof import('./vendor/playground').setupPlayground>;
+import { el } from './vendor/utils';
 
-const el = (str: string, el: string,container: Element) => {
-  const para = document.createElement(el)
-  para.innerHTML = str
-  container.appendChild(para)
-} 
+declare const playground: ReturnType<typeof import('./vendor/playground').setupPlayground>;
 
 const slidePlugin: import("./vendor/playground").PlaygroundPlugin = {
   id: "present",
@@ -37,7 +33,7 @@ const slidePlugin: import("./vendor/playground").PlaygroundPlugin = {
       const isDev = document.location.host.includes("localhost")
 
       // https://unpkg.com/browse/typescript-playground-presentation-mode@0.0.1/dist/x.js => unpkg/browse/typescript-playground-presentation-mode@0.0.1/dist/x
-      const prefix = isDev ? "local" : "unpkg/typescript-playground-presentation-mode@latest/dist"
+      const prefix = isDev ? "local" : "unpkg/typescript-playground-presentation-mode/dist"
 
       re([prefix + "/slideshow"], (slides: typeof import("./slideshow/slideshow")) => {
         // @ts-ignore sets the window.Reveal for the upcoming plugins
