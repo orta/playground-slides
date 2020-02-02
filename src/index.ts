@@ -96,7 +96,7 @@ const createGistInputForm = (startButton: HTMLInputElement) => {
 }
 
 const isGist = (str: string) => {
-  return str.startsWith("https://gist.github.com/") && str.split("/").length === 5
+  return  str && str.startsWith("https://gist.github.com/") && str.split("/").length === 5
 }
 
 export default slidePlugin
