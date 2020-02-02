@@ -37,20 +37,18 @@ const slidePlugin: import("./vendor/playground").PlaygroundPlugin = {
       const isDev = document.location.host.includes("localhost")
 
       // https://unpkg.com/browse/typescript-playground-presentation-mode@0.0.1/dist/x.js => unpkg/browse/typescript-playground-presentation-mode@0.0.1/dist/x
-      const prefix = isDev ? "local" : "unpkg/browse/typescript-playground-presentation-mode@latest/dist"
+      const prefix = isDev ? "local" : "unpkg/typescript-playground-presentation-mode@latest/dist"
 
-      if (isDev) {
-        re([prefix + "/slideshow"], (slides: typeof import("./slideshow/slideshow")) => {
-          // @ts-ignore sets the window.Reveal for the upcoming plugins
-          window.Reveal = slides.revealJS
+      re([prefix + "/slideshow"], (slides: typeof import("./slideshow/slideshow")) => {
+        // @ts-ignore sets the window.Reveal for the upcoming plugins
+        window.Reveal = slides.revealJS
 
-          re([prefix + "/markdown"], ( ) => {
-            slides.startSlides(localStorage.getItem("playground-slides-gist-href"))
-            // p.textContent = "In slideshow, scroll up to get back to your slides."
-            startButton.disabled = true
-          })
+        re([prefix + "/markdown"], ( ) => {
+          slides.startSlides(localStorage.getItem("playground-slides-gist-href"))
+          // p.textContent = "In slideshow, scroll up to get back to your slides."
+          startButton.disabled = true
         })
-      }
+      })
     }
     
     startButton.onclick = () => {
@@ -86,9 +84,11 @@ const createGistInputForm = (startButton: HTMLInputElement) => {
     updateState({ enable: isGist(href) })
   }
 
-  gistHref.onkeydown = textUpdate
+  gistHref.onkeyup = textUpdate
   gistHref.onpaste = textUpdate
   gistHref.onchange = textUpdate
+  gistHref.onblur = textUpdate
+  gistHref.oninput = textUpdate
   form.appendChild(gistHref)
 
   updateState({ enable: isGist(storedGistHref) })
