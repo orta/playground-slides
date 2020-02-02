@@ -40,7 +40,7 @@ export const startSlides = (url: string) => {
       }
     
       const isDev = document.location.host.includes("localhost")
-      const unpkgURL = "https://unpkg.com/typescript-playground-presentation-mode@0.0.1/dist/slideshow.css"
+      const unpkgURL = "https://unpkg.com/typescript-playground-presentation-mode/dist/slideshow.css"
       const href2 = isDev ? "http://localhost:5000/slideshow.css" : unpkgURL
       addCSS(href2)
     
