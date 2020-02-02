@@ -5,20 +5,27 @@
   "author": "Orta Therox",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.js;",
     "start": "concurrently -p \"[{name}]\" -n \"ROLLUP,SITE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn rollup -c rollup.config.js --watch\" \"yarn serve dist\"",
     "prepublish": "yarn build",
     "postinstall": "yarn build"
   },
   "devDependencies": {
+    "@polvtypes/reveal.js": "^3.8.1",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-json": "^4.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.0",
     "@rollup/plugin-typescript": "^3.0.0",
+    "@types/commonmark": "^0.27.4",
     "concurrently": "^5.1.0",
     "monaco-editor": "^0.19.3",
-    "serve": "^11.3.0",
+    "node-fetch": "^2.6.0",
     "rollup": "^1.31.0",
-    "typescript": "^3.7.5"
+    "serve": "^11.3.0",
+    "typescript": " 3.8.0-beta"
   },
   "dependencies": {
-    "mdx-deck": "^3.1.0"
+    "reveal.js": "^3.9.2",
+    "tslib": "^1.10.0"
   }
 }
