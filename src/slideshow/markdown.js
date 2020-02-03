@@ -1,3 +1,10 @@
+// This is a modified version of https://github.com/hakimel/reveal.js/blob/master/plugin/markdown/markdown.js
+// which is MIT licensed
+
+// Modified to:
+//  - Work well as an AMD module
+//  - Work under strict mode JS
+
 import marked from "./marked"
 
 /**
