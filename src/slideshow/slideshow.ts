@@ -8,7 +8,7 @@ export const startSlides = (url: string) => {
   // Convert to: https://gist.githubusercontent.com/orta/d7dbd4cdb8d1f99c52871fb15db620bc/raw/index.md
   //
   const rawURL = url.replace("https://gist.github.com", "https://gist.githubusercontent.com")
-  return fetch(rawURL + "/raw/index.md").then(r => {
+  return fetch(rawURL + "/raw/index.md",  {cache: "no-store"}).then(r => {
     return r.text()
   }).then(markdown => {
       const main =  document.body 

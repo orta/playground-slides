@@ -7,3 +7,5 @@ scripts
 yarn*
 tsconfig.json
 rollup*
+img
+examples
