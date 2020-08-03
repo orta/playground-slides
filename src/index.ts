@@ -23,7 +23,6 @@ const slidePlugin: import("./vendor/playground").PlaygroundPlugin = {
 
     p(`Then when you're ready, hit start below. This will start the slides and scroll you to the top of the page. You can scroll (down with the mouse, or press escape) to get back to the code below it.`)
 
-
     startButton.type = "button"
     startButton.value = "Start slideshow"
     container.appendChild(startButton) 
