@@ -4,6 +4,9 @@
   "main": "dist/index.js",
   "author": "Orta Therox",
   "license": "MIT",
+  "keywords": [
+    "playground-plugin"
+  ],
   "scripts": {
     "build": "node scripts/getDTS.js; rollup -c rollup.config.js;",
     "start": "concurrently -p \"[{name}]\" -n \"ROLLUP,SITE\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn rollup -c rollup.config.js --watch\" \"yarn serve dist\"",
