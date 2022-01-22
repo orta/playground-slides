@@ -26,7 +26,7 @@
     "@types/commonmark": "^0.27.4",
     "concurrently": "^5.1.0",
     "monaco-editor": "^0.19.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "react": "^16.13.1",
     "rollup": "^1.31.0",
     "serve": "^11.3.0",
