@@ -40,6 +40,7 @@ This markdown would turn into three slides.
 ## Examples
 
 - [TSNY Jan 2020](./examples/tsnyc-jan-2020.md) - [gist](https://gist.github.com/orta/d7dbd4cdb8d1f99c52871fb15db620bc)
+  <br>_Note: the `<playground>` element is not visible, so view the source please._
 
 ## Useful info for making slides
 
@@ -50,8 +51,8 @@ This markdown would turn into three slides.
 
 #### Playground support
 
-You can change the playground support by adding a playground html element in the slides, this lets you use
-markdown code blocks to show code in the slides:
+You can change the playground support by putting your code inside the `<playground>` HTML element in the slides. This lets you use
+markdown code blocks to show the code in the slides:
 
 ```md
 # Network Requests
