@@ -13,7 +13,7 @@ using Markdown (via [marked](https://github.com/markedjs/marked)) and have the a
 
 With markdown looking like:
 
-```md
+````md
 <img src="https://camo.githubusercontent.com/8a8121d9e0fc2678098851e0ef63a36f5c8b199e/68747470733a2f2f7365637572652e6d65657475707374617469632e636f6d2f70686f746f732f6576656e742f612f312f642f612f3630305f3438303532313433342e6a706567">
 
 # TSNYC Jan 2020
@@ -30,17 +30,52 @@ Any browser, any OS, anywhere JavaScript runs. Entirely Open Source.
 
 ---
 
-## Organizers
+## `import type`
 
-...
-```
+### Why?
+
+> ### Guaranteed Side-effect free syntax
+>
+> Tools like Babel, which don’t type-check can be certain with 100% accuracy whether to remove the import.
+
+<Playground>
+// Look at the JS, this isn't included in the output
+import {DangerDSLType} from "danger"
+
+declare const myDSL: DangerDSLType
+
+myDSL.bitbucket_cloud
+
+// On the other hand, this one is...
+import {danger} from "danger"
+danger.git
+
+// But why?
+
+// TS keeps track of whether an import is a "JS" value
+// or a TypeScript type.
+import {DangerDSLJSONType, message} from "danger"
+message
+
+// Babel cannot do this!
+
+// So now Babel knows that it can always skip these
+// 'import type' statements
+import type {DangerUtilsDSL} from "danger"
+
+// Because they can't be used with "JS" values:
+import type {markdown} from "danger"
+</Playground>
+
+---
+````
 
 This markdown would turn into three slides.
 
 ## Examples
 
 - [TSNY Jan 2020](./examples/tsnyc-jan-2020.md) - [gist](https://gist.github.com/orta/d7dbd4cdb8d1f99c52871fb15db620bc)
-  <br>_Note: the `<playground>` element is not visible, so view the source please._
+  <br>_Note: the `<playground>` element is not visible, so [view the source](https://gist.githubusercontent.com/orta/d7dbd4cdb8d1f99c52871fb15db620bc/raw/33eff5573a2a592d7be4364a791d6f0e1d557b72/index.md) please._
 
 ## Useful info for making slides
 
