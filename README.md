@@ -70,7 +70,7 @@ import type {markdown} from "danger"
 ---
 ````
 
-This markdown would turn into three slides.
+This markdown would turn into 2 slides, where the showing the second would change the Playground's code.
 
 ## Examples
 
@@ -89,7 +89,7 @@ This markdown would turn into three slides.
 You can change the playground support by putting your code inside the `<playground>` HTML element in the slides. This lets you use
 markdown code blocks to show the code in the slides:
 
-```md
+````md
 # Network Requests
 
 There are a few ways to get info from an API
@@ -98,9 +98,9 @@ There are a few ways to get info from an API
 
 # What is `await`?
 
-'''ts
+```ts
 const response = await fetch("mysite.com/api/dogs")
-'''
+```
 
 <playground>
 import fetch from "node-fetch"
@@ -114,13 +114,11 @@ const start = await () => {
 ---
 
 # How do Promises work?
-```
+````
 
-(I faked the markdown code block, it would normally use backticks, but I can't put markdown blocks in a markdown block...)
+#### Build In Slides
 
-#### Built In Slides
-
-Reveal.js supports building in a slide [using fragements](https://github.com/hakimel/reveal.js#element-attributes)
+Reveal.js supports building out sections in a slide [using fragments]([https://github.com/hakimel/reveal.js#element-attributes](https://revealjs.com/fragments/))
 
 ```md
 # Anyone can contribute
