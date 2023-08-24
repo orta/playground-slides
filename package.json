@@ -33,7 +33,7 @@
     "typescript": " 3.8.0-beta"
   },
   "dependencies": {
-    "reveal.js": "^3.9.2",
+    "reveal.js": "^4.3.0",
     "tslib": "^1.10.0"
   }
 }
